@@ -15,28 +15,30 @@ body {
     color: white; 
     overflow-x: hidden;
     position: relative;
+    /* Pastikan tinggi body minimal 100% dari viewport agar konten terpusat di tengah */
+    min-height: 100vh; 
 }
 
-/* Mengatur Video agar Full Screen dan Fixed */
+/* Mengatur Video agar Full Screen dan Fixed (Sudah Responsif) */
 #bg-video {
-    position: fixed; /* Memastikan video tetap pada viewport */
+    position: fixed;
     top: 50%;
     left: 50%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100; /* Menempatkan video di belakang semua konten */
-    transform: translate(-50%, -50%); /* Memastikan video terpusat */
-    object-fit: cover; /* Memastikan video menutupi seluruh area tanpa distorsi */
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
-/* Mengatur Konten Halaman */
+/* Mengatur Konten Halaman (Sudah Responsif dengan Flexbox) */
 .content {
-    position: relative; /* Penting untuk menjaga konten di atas video (z-index video adalah -100) */
+    position: relative;
     z-index: 10;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.4); /* Opasitas gelap agar teks putih mudah dibaca */
+    padding: 30px 20px; /* Padding disesuaikan agar tidak terlalu lebar di ponsel */
+    background-color: rgba(0, 0, 0, 0.4);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -45,365 +47,168 @@ body {
     text-align: center;
 }
 
+.container {
+    /* Lebar maksimal 420px, tetapi menggunakan lebar 100% untuk mengisi layar di ponsel */
+    width: 100%; 
+    max-width: 420px;
+    margin: auto;
+    padding: 0; /* Hapus padding yang tumpang tindih dari 20px sebelumnya */
+    box-sizing: border-box; /* Penting untuk perhitungan lebar */
+}
 
-    .container {
-      max-width: 420px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-    }
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.2);
+    margin: 20px auto;
+}
 
-    .profile-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid rgba(255,255,255,0.2);
-      margin: 20px auto;
-    }
-
-    .profile-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #ffffff; 
-  font-weight: 700;
-  padding: 5px 0; 
-  font-family: 'Open Sans', sans-serif;
-  text-transform: capitalize ;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffffff; 
+    font-weight: 700;
+    padding: 5px 0; 
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
 }
 
-    .bio {
-      color: #ffffff;
-      font-size: 15px;
-      max-width: 80%;
-      margin: auto;
-      margin-bottom: 25px;
-      line-height: 1.5;
-      text-transform: capitalize  ;
-    }
-
-    .social-btn {
-      width: 100%;
-      background: rgba(116, 61, 106, 0.349);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 14px;
-      margin: 10px 0;
-      border-radius: 50px;
-      color: rgb(255, 255, 255);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: 0.3s;
-      text-decoration: none;
-    }
-
-    .social-btn:hover {
-      background: rgba(255, 0, 234, 0.452);
-      border-color: #ff4fc8;
-      transform: scale(1.02);   
-    }
-
-    
-    .icon-box {
-      width: 30px; 
-      height: 30px;
-      margin-right: 50px;
-      display: flex;
-    }
-
-    .lgGPK {
-  box-sizing: border-box;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 1.5rem 0rem;
-  margin: 0rem;
+.bio {
+    color: #ffffff;
+    font-size: 15px;
+    /* Ubah max-width menjadi persentase agar responsif */
+    max-width: 90%; 
+    margin: auto;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    text-transform: capitalize;
 }
 
-@media (min-width: 30rem){
-.lgGPK {
-    padding-left: 1rem;
-}
-}
-
-@media (min-width: 30rem){
-.lgGPK {
-    padding-right: 1rem;
-}
-}
-
-.iTvqUQ {
-  box-sizing: border-box;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0rem 0rem 1rem;
-  margin: 0rem;
-}
-
-.bCOiUp {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0.5rem 0rem;
-  margin: 0rem;
-}
-
-.iwkhyt {
-  box-sizing: border-box;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0rem;
-  margin: 0rem;
-}
-
-.eA-dbPE {
-  color: #000;
-  font-family: var(--global-fontStack-heading);
-  margin: 0px;
-  position: relative;
-  text-transform: none;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  text-align: center;
-  font-weight: var(--global-fontWeights-heading) !important;
-  font-size: 30px;
-  line-height: 1.25 !important;
-}
-
-@media (min-width: 30rem){
-.eA-dbPE {
-    line-height: 1.25 !important;
-}
-}
-
-@media (min-width: 30rem){
-.eA-dbPE {
-    font-size: var(--global-fontSizes-xxxl) !important;
-}
-}
-
-.fzvJWq {
-  color: #000;
-  font-family: var(--global-fontStack-body);
-  letter-spacing: 0.1em;
-  margin: 0px;
-  position: relative;
-  text-transform: uppercase;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  text-align: center;
-  font-weight: var(--global-fontWeights-heading) !important;
-  font-size: var(--global-fontSizes-sm) !important;
-  line-height: 1.5 !important;
-}
-
-.ipgZIC {
-  box-sizing: border-box;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0rem 0rem 4rem;
-  margin: 0rem;
-}
-
-@media (min-width: 48rem){
-.ipgZIC {
-    padding-bottom: 0rem;
-}
-}
-
-@media (min-width: 30rem){
-.ipgZIC {
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-}
-
-.eabsBf {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  width: initial;
-  padding: 0rem;
-  margin: 0rem;
-}
-
-@media (min-width: 30rem){
-.eabsBf {
+/* --- TOMBOL LINK RESPONSIVE --- */
+.social-btn {
     width: 100%;
-}
-}
-
-@media (min-width: 30rem){
-.eabsBf {
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-}
-
-@media (min-width: 30rem){
-.eabsBf {
-    flex-direction: row;
-}
-}
-
-.dnLMGE {
-  -webkit-box-align: center;
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column ;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0.5rem 0rem;
-  margin: 0rem;
-}
-
-@media (min-width: 30rem){
-.dnLMGE {
-    flex-direction: column;
-}
-}
-
-.fPgsDF {
-  box-sizing: border-box;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0rem;
-  margin: 0rem;
-}
-
-@media (min-width: 30rem){
-.fPgsDF {
-    margin-bottom: 0.5rem;
-}
-}
-
-@media (min-width: 30rem){
-.fPgsDF {
-    margin-top: 0.5rem;
-}
-}
-
-@media (min-width: 30rem){
-.fPgsDF {
-    flex-direction: column;
-}
-}
-
-@media (min-width: 30rem){
-.fPgsDF {
+    background: rgba(116, 61, 106, 0.349);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
     display: flex;
-}
-}
-
-.SHGEY {
-  display: inline-block;
-  vertical-align: unset;
-}
-
-.SHGEY svg {
-  display: block;
-  width: 2.5rem;
-  height: 2.5rem;
-  fill: #fff;
+    justify-content: space-between; /* Untuk memisahkan ikon dan teks */
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    box-sizing: border-box; /* Penting agar padding tidak menambah lebar total */
 }
 
-svg:not(:root) {
-  overflow: hidden;
+.social-btn:hover {
+    background: rgba(255, 0, 234, 0.452);
+    border-color: #ff4fc8;
+    transform: scale(1.02);  
 }
 
-@media (min-width: 30rem){
-.SHGEY svg {
-  height: 3rem;
-}
-}
-
-@media (min-width: 30rem){
-.SHGEY svg {
-  width: 3rem;
-}
+.icon-box {
+    width: 30px; 
+    height: 30px;
+    margin-right: 15px; /* Kurangi margin agar lebih baik di ponsel */
+    display: block; /* Agar gambar tidak memiliki celah di bawahnya */
 }
 
-:not(svg) {
-  transform-origin: 0px 0px;
-}
-
-.esMssO {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0rem 0rem 0rem 1.5rem;
-  margin: 0rem 0.5rem;
-}
-
-@media (min-width: 30rem){
-.esMssO {
-    padding-left: 0rem;
-}
-}
-
-.kfdjTe {
-  color: #fff;
-  font-family: var(--global-fontStack-body);
-  margin: 0px;
-  position: relative;
-  text-transform: lowercase;
-  transition: all 200ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  text-align: center;
-  font-weight: 1 !important;
-  font-size: 20px;
-  line-height: 1.4 !important;
-}
-
-@media (min-width: 0rem){
-.kfdjTe {
-    text-align: center;
-}
-}
-
-@media (min-width: 0rem){
-.kfdjTe {
-    line-height: 1.0 !important;
-}
-}
-
-@media (min-width: 0rem){
-.kfdjTe {
-    font-size: var(--global-fontSizes-xxsm) !important;
-}
-}
-
-.dnLMGE {
-  -webkit-box-align: center;
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
-  padding: 0.5rem 0rem;
-  margin: 0rem;
-}
-
-@media (min-width: 30rem){
-.dnLMGE {
-    flex-direction: column;
-}
+.social-btn span {
+    /* Mendorong teks ke kanan untuk menyeimbangkan layout */
+    flex-grow: 1; 
+    text-align: left;
+    font-size: 18px; /* Ukuran font link */
+    padding-left: 10px; /* Sedikit padding untuk memisahkan dari ikon */
 }
 
 
+.how-it-works-section {
+    width: 100%;
+    padding: 30px 0;
+    color: white; /* Ubah warna font agar terlihat di atas background video */
+}
 
+.how-it-works-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.how-it-works-subtitle {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column; /* Default: Bertumpuk di ponsel */
+    align-items: center;
+    gap: 20px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-align: left;
+    width: 80%; /* Lebar di ponsel */
+}
+
+/* Media Query untuk Layar yang Lebih Besar (Tablet ke atas) */
+@media (min-width: 600px) {
+    .steps-container {
+        flex-direction: row; /* Berdampingan di layar lebar */
+        justify-content: space-around;
+    }
+    .step-item {
+        flex-direction: column; /* Ikon di atas teks */
+        text-align: center;
+        width: 20%; /* Setiap item mendapat porsi yang sama */
+    }
+    .step-text {
+        margin-top: 10px;
+        padding-left: 0;
+    }
+}
+
+.step-icon-box {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Cegah ikon menyusut */
+}
+
+.step-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.step-text {
+    font-size: 14px;
+    line-height: 1.4;
+    text-transform: lowercase;
+    color: #fff;
+}
 
   </style>
 </head>
 <body>
-<video autoplay loop muted playsinline id="bg-video">
-        <source src="lnding1.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="vidio/lnding1.mp4" type="video/mp4">
     </video>
 
   <div class="container">
@@ -459,63 +264,43 @@ svg:not(:root) {
       <span>Threads ❤️ </span>
     </a>
 
-    <br><br/>    <br><br/>
+<br><br/>
 
-          <div class="sc-gKclnd lgGPK">
-        <div class="sc-gKclnd iTvqUQ">
-          <div class="sc-gKclnd bCOiUp">
-            <div class="sc-gKclnd iwkhyt">
-              <h2 class="sc-bqiRlB eA-dbPE">How it works</h2>
+<div class="how-it-works-section">
+    <h2 class="how-it-works-title">How it works</h2>
+    <h3 class="how-it-works-subtitle">Get started in 2 minutes</h3>
+    
+    <div class="steps-container">
+        <div class="step-item">
+            <div class="step-icon-box">
+                <img src="user-plus.svg" alt="Sign Up Icon">
             </div>
-            <h3 class="sc-ksdxgE fzvJWq">Get started in 2 minutes</h3>
-          </div>
+            <span class="step-text">Sign up</span>
         </div>
-        <div class="sc-gKclnd ipgZIC">
-          <div class="sc-gKclnd eabsBf">
-            <div class="sc-gKclnd dnLMGE">
-              <div class="sc-gKclnd fPgsDF">
-                <div aria-hidden="true" stroke="gray2" class="sc-hKwDye SHGEY">
-                  <img src="user-plus.svg" style="width: 20px;">
-                </div>
-              </div>
-              <div class="sc-gKclnd esMssO">
-                <span color="content" class="sc-kDTinF kfdjTe">Sign up</span>
-              </div>
+        
+        <div class="step-item">
+            <div class="step-icon-box">
+                <img src="mail.svg" alt="Mail Icon">
             </div>
-            <div class="sc-gKclnd dnLMGE">
-              <div class="sc-gKclnd fPgsDF">
-                <div aria-hidden="true" stroke="gray2" class="sc-hKwDye SHGEY">
-                  <img src="mail.svg" style="width: 20px;">
-                </div>
-              </div>
-              <div class="sc-gKclnd esMssO">
-                <span color="content" class="sc-kDTinF kfdjTe">verify your email</span>
-              </div>
-            </div>
-            <div class="sc-gKclnd dnLMGE">
-              <div class="sc-gKclnd fPgsDF">
-                <div aria-hidden="true" stroke="gray2" class="sc-hKwDye SHGEY">
-                  <img src="user.svg" style="width: 20px;">
-                </div>
-              </div>
-              <div class="sc-gKclnd esMssO">
-                <span color="content" class="sc-kDTinF kfdjTe">complete your personal data</span>
-              </div>
-            </div>
-            <div class="sc-gKclnd dnLMGE">
-              <div class="sc-gKclnd fPgsDF">
-                <div aria-hidden="true" stroke="gray2" class="sc-hKwDye SHGEY">
-                  <img src="check-circle.svg" style="width: 20px;">
-                </div>
-              </div>
-              <div class="sc-gKclnd esMssO">
-                <span color="content" class="sc-kDTinF kfdjTe" >finish</span>
-              </div>
-            </div>
-          </div>
+            <span class="step-text">verify your email</span>
         </div>
-      </div>
+        
+        <div class="step-item">
+            <div class="step-icon-box">
+                <img src="user.svg" alt="User Icon">
+            </div>
+            <span class="step-text">complete your personal data</span>
+        </div>
+        
+        <div class="step-item">
+            <div class="step-icon-box">
+                <img src="check-circle.svg" alt="Check Icon">
+            </div>
+            <span class="step-text">finish</span>
+        </div>
     </div>
+</div>
+
 	<script type="text/javascript">
 		function noIns(e) {
 			  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
@@ -546,4 +331,3 @@ svg:not(:root) {
   </header>
   </body>
 </html>
-
