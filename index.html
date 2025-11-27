@@ -7,6 +7,7 @@
   <style>
 /* Gaya untuk <body> (Diambil dari kode Anda) */
 /* Aturan dasar untuk body (dari kode Anda) */
+/* Aturan dasar untuk body (dari kode Anda) */
 body {
     margin: 0;
     padding: 0;
@@ -29,6 +30,21 @@ body {
     transform: translate(-50%, -50%); /* Memastikan video terpusat */
     object-fit: cover; /* Memastikan video menutupi seluruh area tanpa distorsi */
 }
+
+/* Mengatur Konten Halaman */
+.content {
+    position: relative; /* Penting untuk menjaga konten di atas video (z-index video adalah -100) */
+    z-index: 10;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.4); /* Opasitas gelap agar teks putih mudah dibaca */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 
     .container {
       max-width: 420px;
@@ -389,6 +405,7 @@ svg:not(:root) {
 <video autoplay loop muted playsinline id="bg-video">
         <source src="vidio/lnding1.mp4" type="video/mp4">
     </video>
+
   <div class="container">
     <div class="profile-img">
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjhJQ-IEmduP9TvgVooO5E79pNQJk3zX2AAjudPya0-h50GWVNgu9Dr7qbqdhH2Q3M_n1H8YfH16GCh1kKbzsvX11YJ9VQ1VlISwqPQiP3SA9587Mcnl5YdPhRBNgZNlrl3ht3LX8bgtDUUeOEkVAhOpPTuHVo-JxXoh1Kt8u3UWz7PR8tE_X1XyiOxC9A/s16000/marcelalatinbabe_118882952_657632401540856_3508825476185354391_n.jpg" alt="Profile" />
