@@ -5,14 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile Links</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://x.com/i/status/1994024423511208397') no-repeat center center fixed; background-size: cover;
-      color: white;
-      overflow-x: hidden;
-    }
+/* Gaya untuk <body> (Diambil dari kode Anda) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white; /* Untuk konten yang berada di atas video */
+    overflow-x: hidden;
+    position: relative; /* Penting untuk penempatan konten di atas video */
+}
+
+/* Gaya untuk Video Background */
+.bg-video {
+    position: fixed; /* Memastikan video tetap pada viewport */
+    top: auto;
+    left: auto;
+    min-width: auto;
+    min-height: auto;
+    width: auto;
+    height: auto;
+    z-index: -100; /* Menempatkan video di belakang konten */
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Mirip dengan background-size: cover */
+}
+
+/* Gaya untuk Konten agar berada di atas video */
+
+.content {
+    position: relative;
+    z-index: 100;
+    padding: 20px;
+}
 
     .container {
       max-width: 420px;
@@ -364,6 +387,9 @@ svg:not(:root) {
 }
 }
 
+
+
+
   </style>
 </head>
 <body>
@@ -378,6 +404,8 @@ svg:not(:root) {
     <h1>Alex Rose</h1>
 
     <p class="bio" style="text-shadow: 1px 1px #000000;">This is my private site<br> meet me, you get what you want <br> ❤️❤️❤️ </p>
+
+    <br><br/>
 
     <a class="social-btn" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
     <img 
@@ -420,6 +448,9 @@ svg:not(:root) {
     >
       <span>Threads ❤️ </span>
     </a>
+
+    <br><br/>    <br><br/>
+
           <div class="sc-gKclnd lgGPK">
         <div class="sc-gKclnd iTvqUQ">
           <div class="sc-gKclnd bCOiUp">
@@ -505,6 +536,3 @@ svg:not(:root) {
   </header>
   </body>
 </html>
-
-
-
